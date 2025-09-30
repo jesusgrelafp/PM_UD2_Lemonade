@@ -113,7 +113,6 @@ fun LemonadeApp(modifier : Modifier = Modifier) {
                 else -> 1                           // En cualquier otro caso pasamos a la fase 1
             }
         }) {
-
             // Mostramos la imagen en el botón
             Image(painter = painterResource(imageResource), contentDescription = contentDescriptionResource)
         }
