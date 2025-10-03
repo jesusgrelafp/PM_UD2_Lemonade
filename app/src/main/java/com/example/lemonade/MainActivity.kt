@@ -14,6 +14,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.safeDrawingPadding
 import androidx.compose.foundation.layout.statusBars
 import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -82,14 +83,13 @@ fun LemonadeApp(modifier : Modifier = Modifier) {
     Text (
         text = stringResource(R.string.app_name),
         fontSize = 30.sp,
-        lineHeight = 40.sp,
+        lineHeight = 60.sp,
         textAlign = TextAlign.Center,
         modifier = Modifier
+            .safeDrawingPadding() // Este modificador agrega padding automático en la parte superior de la vista para evitar que el contenido quede detrás de la barra de estado del sistema (donde está el reloj, la batería, etc.)
             .fillMaxWidth()
             .background(Color.Yellow)
-            .padding(WindowInsets.statusBars.asPaddingValues()) // respeta la barra de estado
             .padding(8.dp)
-
     )
 
     //Añadimos una Column que contendrá el Button(y dentro la Image), el Spacer y el Text
